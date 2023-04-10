@@ -1,0 +1,45 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(44, 44, 44);
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero .title {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.hero .title h1 span {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.nav .navbar-brand {
+    font-weight: bolder;
+}
+
+.hero .title button {
+    width: 110px;
+}
+
+footer h3 {
+   color: antiquewhite;
+}
+
+footer .sosmeditem a{
+    text-decoration: none;
+}
