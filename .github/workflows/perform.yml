@@ -1,4 +1,4 @@
-name: Performance Testing with Selenium 
+name: Performance Test using Selenium 
 on:
   push:
     branches:
