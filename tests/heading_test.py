@@ -14,6 +14,12 @@ class BatikWebsiteTestCase(unittest.TestCase):
             cls.url = os.environ['URL']  # Mengambil URL dari variabel lingkungan
         except:
             cls.url = "http://localhost"
+
+    def test(self):
+        # Menjalankan serangkaian pengujian
+        self.test_1_page_heading_check()
+        self.test_2_product_check()
+        self.test_3_contact_check()
     
     def test_1_page_heading_check(self):  
         self.browser.get('http://localhost/Batik-Store-aut-master/src/index.php') 
