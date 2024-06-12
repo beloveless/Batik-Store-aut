@@ -22,7 +22,8 @@ class BatikWebsiteTestCase(unittest.TestCase):
         self.test_3_contact_check()
     
     def test_1_page_heading_check(self):  
-        self.browser.get('http://localhost/Batik-Store-aut-master/src/index.php') 
+        access_url = self.url + '/index.php'
+        self.browser.get(access_url)
         heading_element2 = self.browser.find_element(By.TAG_NAME, 'h1') 
         print("Heading text:", heading_element2.text)
         # Menghilangkan atau mengganti karakter '\n' dengan karakter baris baru
