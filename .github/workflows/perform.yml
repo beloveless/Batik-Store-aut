@@ -57,5 +57,11 @@ jobs:
       - name: Install Selenium client
         run: pip install -U selenium pytest pytest-xdist
 
+      - name: Run Python tests
+        env:
+          AUT_URL: ${{ env.AUT_URL }}
+        run: |
+          pytest --maxfail=1 --disable-warnings -v tests/
+
       - name: stop docker
         run: docker stop blowfish-apache
