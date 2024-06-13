@@ -26,10 +26,6 @@ jobs:
           URL=$(ip -f inet -o addr show docker0 | awk '{print $4}' | cut -d '/' -f 1)
           echo "URL=$URL" >> $GITHUB_ENV
 
-      - name: Check AUT URL
-        run: |
-          curl -L http://${{ env.URL }}/index-test.php
-
       - name: Check Server Availability
         run: |
           if ! nc -zv ${{ env.URL }} 80; then
@@ -53,9 +49,13 @@ jobs:
       - name: Install Selenium client
         run: pip install -U selenium pytest pytest-xdist
 
+      - name: Check AUT
+        run: |
+          curl -L http://${{ env.URL }}
+
       - name: Run Python tests
         env:
-          AUT_URL: ${{ env.AUT_URL }}
+          AUT_URL: ${{ env.URL }}
         run: |
           pytest -v tests/
 

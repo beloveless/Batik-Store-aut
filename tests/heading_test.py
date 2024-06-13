@@ -42,7 +42,7 @@ class BatikWebsiteTestCase(unittest.TestCase):
         self.assertIn('~ ETALASE PRODUCT ~', heading_element.text)  
 
     def contact_check(self):  
-        access_url = self.url + '/index.php'
+        access_url = 'http://' + self.url + '/index.php'
         self.browser.get(access_url)
 
         time.sleep(5)
