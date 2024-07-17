@@ -34,7 +34,6 @@ jobs:
 
       - name: stop docker
         run: docker stop docker-apache
-  
 
   sonarcloud:
     name: SonarCloud
