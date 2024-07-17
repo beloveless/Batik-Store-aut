@@ -5,7 +5,7 @@ on:
       - master
 jobs:
   dast:
-    name: DAST
+    name: OWASP-ZAP
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
@@ -20,6 +20,9 @@ jobs:
 
       - name: Run AUT using docker-compose
         run: docker-compose up -d
+
+      - name: Show running containers
+        run: docker ps
       
       - name: Get AUT URL
         run: |
