@@ -27,7 +27,6 @@ class BatikWebsiteTestCase(unittest.TestCase):
         access_url = 'http://' + self.url + '/index.php'
         self.browser.get(access_url)
 
-        # time.sleep(5)
         heading_element = self.browser.find_element(By.TAG_NAME, 'h1')
         print("Heading text:", heading_element.text)
         self.assertIn('WELCOME TO\nSTORE BATIK TULIS', heading_element.text)  
@@ -48,9 +47,7 @@ class BatikWebsiteTestCase(unittest.TestCase):
         access_url = 'http://' + self.url + '/mycart.php'
         self.browser.get(access_url)
 
-        # time.sleep(5)
         self.browser.find_element(By.NAME, 'Remove_Item').click() 
-
         total=self.browser.find_element(By.ID, 'gtotal')
         self.assertIn('0', total.text)
     
