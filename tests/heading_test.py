@@ -36,8 +36,8 @@ class BatikWebsiteTestCase(unittest.TestCase):
         access_url = 'http://' + self.url + '/index.php'
         self.browser.get(access_url)
 
-        # time.sleep(5)
         self.browser.find_element(By.XPATH, '//*[@id="navbarNav"]/ul/li[2]/a').click() 
+        time.sleep(1)
         self.browser.find_element(By.NAME, 'Add_To_Cart').click() 
         self.browser.find_element(By.CLASS_NAME, 'btn-outline-success').click() 
 
